@@ -1,0 +1,17 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<form [formGroup]="form">
+  <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
+    <div *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
+      <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}">
+      <label attr.for="{{ control.controls.id.value }}">{{ control.controls.text.value }}</label>
+    </div>
+  </div>
+  <div [class.invalid]="!form.controls.selectedItems.valid" *ngIf="!form.controls.selectedItems.valid">
+    checkbox group is required!
+  </div>
+  <hr>
+  <pre>{{form.controls.selectedItems.value | json}}</pre>
+</form>

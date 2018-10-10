@@ -1,0 +1,12 @@
+p {
+    font-family: Lato;
+  }
+  
+  div {
+    padding:5px;
+    margin: 10px 0;
+  }
+  
+  .invalid {
+    background-color: #ffd4d4;
+  }
